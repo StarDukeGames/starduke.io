@@ -7,16 +7,6 @@
     <title>星际公爵</title>
     <link rel="icon" href="./img/pie.webp">
     <meta name="viewport" content="width=device-width,maximum-scale=0,user-scalable=no,shrink-to-fit=no" />
-    <script>
-        if (
-            /Mobi|Android|iPhone/i.test(navigator.userAgent) ||
-            navigator.userAgent.match(/Mobi/i) ||
-            navigator.userAgent.match(/Android/i) ||
-            navigator.userAgent.match(/iPhone/i)
-        ) {
-            location.href = "/index.html"
-        }
-    </script>
     <style>
         @font-face {
             font-family: 'TIMES';
@@ -70,6 +60,10 @@
         var pageWidth = document.documentElement.clientWidth;
         var link = document.getElementById('links')
 
+        function parentToPage(url) {
+            window.parent.location.href = url;
+        }
+
         function setCss() {
             if (pageWidth < 1440) {
                 link.setAttribute('href', './css/max1440xjgj.css')
@@ -83,7 +77,7 @@
         }
         setCss()
 
-        function setBgClass(e, domStr, controlClass) {
+        function setBgClass(e, domStr, controlClass, url) {
             var liDom = document.querySelectorAll(domStr),
                 hasClass = false;
             e.classList.forEach(function (key) {
@@ -96,6 +90,10 @@
             if (!hasClass) {
                 e.classList.add(controlClass)
             }
+
+            if (url) {
+                parentToPage(url);
+            }
         }
     </script>
 </head>
@@ -105,17 +103,17 @@
         <!-- <img src="./img/nav-log.webp" alt="logo"> -->
         <img src="./svg/logo.svg" alt="logo">
         <ul id="navLink">
-            <li><a onclick="setBgClass(this,'#navLink li a','nav-active')" href="http://game.starduke.io"
+            <li><a href="javascript:;" onclick="setBgClass(this,'#navLink li a','nav-active', 'http://game.starduke.io')"
                     target="_blank">GAME</a>
             </li>
-            <li><a onclick="setBgClass(this,'#navLink li a','nav-active')" href="http://game.starduke.io"
+            <li><a href="javascript:;" onclick="setBgClass(this,'#navLink li a','nav-active', 'http://game.starduke.io')"
                     target="_blank">MARKET</a></li>
-            <li><a onclick="setBgClass(this,'#navLink li a','nav-active')" target="_blank">SDK FARM</a></li>
-            <li><a onclick="setBgClass(this,'#navLink li a','nav-active')" target="_blank">LIQUIDITY</a></li>
-            <li><a onclick="setBgClass(this,'#navLink li a','nav-active')" target="_blank">DAO</a></li>
+            <li><a href="javascript:;" onclick="setBgClass(this,'#navLink li a','nav-active')" target="_blank">SDK FARM</a></li>
+            <li><a href="javascript:;" onclick="setBgClass(this,'#navLink li a','nav-active')" target="_blank">LIQUIDITY</a></li>
+            <li><a href="javascript:;" onclick="setBgClass(this,'#navLink li a','nav-active')" target="_blank">DAO</a></li>
         </ul>
         <div>
-            <a class="start-btn sacle-animation" href="http://game.starduke.io" target="_blank">START</a>
+            <a href="javascript:;" class="start-btn sacle-animation" onclick="parentToPage('http://game.starduke.io')" target="_blank">START</a>
         </div>
     </nav>
     <div class="banner-box">
@@ -125,7 +123,7 @@
                 <p>WELCOME TO STAR DUKE</p>
                 <p>A PLAY-TO-EARN GAME BASED ON BLOCKCHAIN</p>
             </div>
-            <a href="http://game.starduke.io" target="_blank" class="banner-btn sacle-animation">ENTER THE GAME</a>
+            <a href="javascript:;" onclick="parentToPage('http://game.starduke.io')" target="_blank" class="banner-btn sacle-animation">ENTER THE GAME</a>
         </div>
     </div>
     <div class="aside-box">
@@ -141,12 +139,12 @@
             <p class="aside-p" style="margin-top: 37px;">A decentralized exploration game based on blockchain for the
                 continuation of human civilization in the universe.</p>
             <div class="aside-btn-box">
-                <a href="https://docs.starduke.io/" target="_blank"
+                <a href="javascript:;" onclick="parentToPage('https://docs.starduke.io/')" target="_blank"
                     onmouseenter="setBgClass(this,'.aside-btn-box a','btn-active')"
                     class="aside-btn btn-active btn-enter">
                     Whitepaper
                 </a>
-                <a href="https://docs.starduke.io/our-token/star-duke-token" target="_blank"
+                <a href="javascript:;" onclick="parentToPage('https://docs.starduke.io/our-token/star-duke-token')" target="_blank"
                     onmouseenter="setBgClass(this,'.aside-btn-box a','btn-active')" class="aside-btn btn-enter">
                     Tokenomics
                 </a>
@@ -338,51 +336,51 @@
             </div>
             <div class="aside-gride">
                 <div style="margin-left: 0;" class="cut5-gride-icon sacle-animation">
-                    <a href="">
+                    <a href="javascript:;">
 
                         <img src="./img/bihu.webp" alt="bihu">
                     </a>
                 </div>
                 <div class="cut5-gride-icon sacle-animation">
-                    <a href="">
+                    <a href="javascript:;">
 
                         <img src="./img/pancakes.webp" alt="pancakes">
                     </a>
                 </div>
                 <div class="cut5-gride-icon sacle-animation">
-                    <a href="https://twitter.com/StarDukeGames" target="_blank">
+                    <a href="javascript:;" onclick="parentToPage('https://twitter.com/StarDukeGames')" target="_blank">
                         <img src="./img/twiter.webp" alt="twiter">
                     </a>
                 </div>
                 <div class="cut5-gride-icon sacle-animation">
-                    <a href="https://discord.gg/3RQ9V255MB" target="_blank">
+                    <a href="javascript:;" onclick="parentToPage('https://discord.gg/3RQ9V255MB')" target="_blank">
 
                         <img src="./img/discord.webp" alt="discord">
                     </a>
                 </div>
                 <div class="cut5-gride-icon sacle-animation">
-                    <a href="https://t.me/StarDuke" target="_blank">
+                    <a href="javascript:;" onclick="parentToPage('https://t.me/StarDuke')" target="_blank">
                         <img src="./img/telegram.webp" alt="telegram">
                     </a>
                 </div>
                 <div class="cut5-gride-icon sacle-animation">
-                    <a href="https://starduke.medium.com/" target="_blank">
+                    <a href="javascript:;" onclick="parentToPage('https://starduke.medium.com/')" target="_blank">
                         <img src="./img/medium-circle-fill.webp" alt="medium-circle-fill">
                     </a>
                 </div>
                 <div class="cut5-gride-icon sacle-animation">
-                    <a href="">
+                    <a href="javascript:;">
                         <img src="./img/wtfaaa.webp" alt="wtfaaa">
                     </a>
                 </div>
                 <div class="cut5-gride-icon sacle-animation">
-                    <a href="">
+                    <a href="javascript:;" onclick="parentToPage('https://bscscan.com/token/0x308757ba7F2172b89c73a4Cb8A7692d6Cd11E3dF')">
 
                         <img src="./img/wtfbbb.webp" alt="wtfbbb">
                     </a>
                 </div>
                 <div class="cut5-gride-icon sacle-animation">
-                    <a href="">
+                    <a href="javascript:;">
 
                         <img src="./img/coinmarketcap.webp" alt="coinmarketcap">
                     </a>
@@ -470,9 +468,9 @@
     </div>
     <div class="footer-box">
         <p class="footer-nav need">
-            <a href="https://docs.starduke.io/" target="_blank">ABOUT US</a>
+            <a href="javascript:;" onclick="parentToPage('https://docs.starduke.io/')" target="_blank">ABOUT US</a>
             <a>VULNERABILITY BOUNTY</a>
-            <a href="https://docs.starduke.io/" target="_blank">Q&A</a>
+            <a href="javascript:;" onclick="parentToPage('https://docs.starduke.io/')" target="_blank">Q&A</a>
             <a>AUDIT</a>
         </p>
         <p class="footer-mark">Copyright © 2022.AII Rights Reserved</p>
